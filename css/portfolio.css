@@ -92,14 +92,20 @@ ul li a:hover {
   background-color: var(--extra-light);
 }
 
+.section {
+  margin-top: 85px; /* Adjusted to match the height of the navigation bar */
+  background-color: var(--extra-light);
+}
+
 .section__container {
-  min-height: 100vh;
+  min-height: calc(100vh - 85px); /* Adjusted to consider the navigation bar height */
   max-width: var(--max-width);
   margin: auto;
   padding: 1rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 4rem;
+  justify-content: center; /* Align grids in the middle */
 }
 
 .content {
@@ -134,7 +140,7 @@ ul li a:hover {
 }
 
 .action__btns {
-  display: flex;
+  display: inline-block;
   gap: 1rem;
 }
 
@@ -173,7 +179,7 @@ ul li a:hover {
 
 .image img {
   width: min(25rem, 90%);
-  border-radius: 100%;
+  border-radius: 2%;
 }
 
 @media (width < 750px) {
@@ -212,6 +218,78 @@ ul li a:hover {
   }
 
   .action__btns {
-    margin: auto;
+    display: inline-block;
+    gap: 1rem;
   }
+  
+  .action__btns button {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 1rem 2rem;
+    outline: none;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  
+  .action__btns button:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+}
+
+.project {
+  background-color: var(--extra-light);
+  padding: 2rem;
+  border-radius: 0; /* Remove border radius */
+  box-shadow: none; /* Remove box shadow */
+  height: 100%; /* Ensure all project containers have equal height */
+}
+
+.project .image {
+  width: 100%;
+  overflow: hidden;
+}
+
+.project img {
+  width: 100%;
+  height: auto;
+}
+
+.project h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.project p {
+  line-height: 1.5rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.action__btns {
+  display: flex;
+  gap: 1rem;
+}
+
+.action__btns button {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: none; /* Remove border */
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.action__btns button:hover {
+  background-color: var(--primary-color-dark); /* Darken on hover */
 }

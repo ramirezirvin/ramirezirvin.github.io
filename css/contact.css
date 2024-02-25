@@ -134,7 +134,7 @@ ul li a:hover {
 }
 
 .action__btns {
-  display: flex;
+  display: inline-block;
   gap: 1rem;
 }
 
